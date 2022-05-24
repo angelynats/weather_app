@@ -1,10 +1,28 @@
-# react-typescript-starter
-###### Minimalist React 18 starter template with TypeScript ⚛ without usage of create-react-app.
+# Weather application
+###### ⛅ The right way to check the weather
 
-Configured with:
+## Features
+- Current weather
+- 5 day / 3 hour weather forecast
+- Many locations
+
+## Configured with:
 - Webpack
 - ESLint
 - Prettier
 
-## Read post on medium:
-https://medium.com/@adriancelczynski/react-with-typescript-starter-kit-without-create-react-app-including-webpack-eslint-bef225c35ffa
+## Installation
+
+git clone https://github.com/angelynats/weather-app.git
+
+cd weather-app
+
+npm install / yarn install
+
+You will need an API key from Open Weather Map to request data.
+If you don’t already have an account, you will need to create one in order to request an API Key.
+
+In your project's root directory, inside the .env file (create one if unavailable) include the following lines:
+
+OPEN_WEATHER_API_KEY = "YOUR_API_KEY"
+
