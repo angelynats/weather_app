@@ -27,7 +27,7 @@ const Header: FC = () => {
         <AppBar position="static" color="secondary">
             <Container maxWidth="lg">
                 <Toolbar>
-                    <Link to="/" style={{textDecoration: "none", flexGrow: 1}}>
+                    <Link to="/" style={{textDecoration: "none"}}>
                         <Typography variant="h6" color="white">
                             Home
                         </Typography>
@@ -38,7 +38,8 @@ const Header: FC = () => {
                                 type="button"
                                 aria-label="refresh-all"
                                 sx={{
-                                    color: "white"
+                                    color: "white",
+                                    marginLeft: "auto"
                                 }}
                                 onClick={updateLocations}
                             >

@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "webpack-cli serve --mode=development --env development --open --hot",
     "build": "webpack --mode=production --env production --progress",
-    "deploy" : "npm run build&&gh-pages -d dist",
+    "deploy": "npm run build&&gh-pages -d dist",
     "lint": "eslint './src/**/*.{ts,tsx,js,jsx}'",
     "lint:fix": "eslint './src/**/*.{ts,tsx,js,jsx}' --fix",
     "test": "jest",
@@ -76,6 +76,7 @@
     "dotenv": "^16.0.1",
     "material-ui": "^0.20.2",
     "node-sass": "^7.0.1",
+    "normalize.css": "^8.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-loader-spinner": "^6.0.0-0",
