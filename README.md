@@ -2,9 +2,9 @@
 ###### ⛅ The right way to check the weather
 
 ## Features
-Current weather
-5 day / 3 hour weather forecast
-Many locations
+- Current weather
+- 5 day / 3 hour weather forecast
+- Many locations
 
 Configured with:
 - Webpack
