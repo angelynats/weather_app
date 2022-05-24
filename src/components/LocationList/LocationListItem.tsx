@@ -61,10 +61,10 @@ const LocationListItem: FC<LocationListItemProps> = ({
             >
                 <CardHeader
                     action={
-                        <Tooltip title="Update">
+                        <Tooltip title="Refresh">
                             <IconButton
                                 type="button"
-                                aria-label="update"
+                                aria-label="refresh"
                                 onClick={(e) => onUpdateLocation(e, coord)}
                             >
                                 <CachedIcon />

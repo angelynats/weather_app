@@ -33,10 +33,10 @@ const Header: FC = () => {
                         </Typography>
                     </Link>
                     {pathname === "/" && (
-                        <Tooltip title="Update all">
+                        <Tooltip title="Refresh all">
                             <IconButton
                                 type="button"
-                                aria-label="update-all"
+                                aria-label="refresh-all"
                                 sx={{
                                     color: "white"
                                 }}
