@@ -11,7 +11,6 @@ import AppContainer from "./AppContainer";
 
 // helpers
 import {ModalProvider} from "./utils/contexts";
-import "normalize.css";
 
 // styles
 import {createTheme, ThemeProvider} from "@mui/material";
