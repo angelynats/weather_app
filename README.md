@@ -6,7 +6,7 @@
 - 5 day / 3 hour weather forecast
 - Many locations
 
-Configured with:
+##### Configured with:
 - Webpack
 - ESLint
 - Prettier
