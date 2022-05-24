@@ -2,5 +2,5 @@ node_modules/
 dist/
 .cache/
 .idea/
-# .env/
+.env/
 package-lock.json
