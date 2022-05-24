@@ -25,11 +25,9 @@ const LocationSearch: FC = () => {
 
     const fetchCities = useCallback(
         (inputValue: string, callback: (options: CityNameOption[]) => void): void => {
-            fetchCityNames(inputValue)
-                .then((options) => {
-                    callback(options);
-                })
-                .catch((error) => console.log("fetchCities error", error));
+            fetchCityNames(inputValue).then((options) => {
+                callback(options);
+            });
         },
         []
     );

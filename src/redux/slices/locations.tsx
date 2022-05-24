@@ -43,7 +43,6 @@ const locationsSlice = createSlice({
             setLocationsInStorage(state.locations);
         });
         builder.addCase(fetchCurrentWeather.rejected, (state, {payload}) => {
-            console.log("fetchCurrentWeather.rejected", payload);
             state.error = payload;
             state.error.message &&
                 addNotification({
@@ -61,7 +60,6 @@ const locationsSlice = createSlice({
             state.loading = false;
         });
         builder.addCase(fetchCurrentWeatherMultiple.rejected, (state, {payload}) => {
-            console.log("fetchCurrentWeatherMultiple.rejected", payload);
             state.error = payload;
             state.loading = false;
             state.error.message &&

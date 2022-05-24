@@ -23,7 +23,6 @@ const AppContainer: FC = () => {
     const {openModal} = useContext(ModalContext);
 
     useEffect(() => {
-        console.log("useEffect!!!!!");
         const locationsFromStorage = getLocationsFromStorage();
         if (locationsFromStorage.length) {
             dispatch(fetchCurrentWeatherMultiple(locationsFromStorage));

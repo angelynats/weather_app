@@ -37,7 +37,6 @@ const locationSlice = createSlice({
             state.loading = false;
         });
         builder.addCase(fetchForecastData.rejected, (state, {payload}) => {
-            console.log("fetchForecastData.rejected", payload);
             state.error = payload;
             state.loading = false;
             state.error.message &&
