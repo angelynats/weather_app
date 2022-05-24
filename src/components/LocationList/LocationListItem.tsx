@@ -12,16 +12,24 @@ import {Coordinates, LocationId, Weather} from "src/utils/interfaces";
 import openWeatherAPI from "src/api/openWeatherAPI";
 
 // styles
-import {Card, CardContent, CardHeader, CardMedia, IconButton, Typography, Box} from "@mui/material";
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardMedia,
+    IconButton,
+    Typography,
+    Box,
+    Tooltip
+} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CachedIcon from "@mui/icons-material/Cached";
-import InfoIcon from "@mui/icons-material/Info";
 
 interface LocationListItemProps {
     location: Weather;
-    onDeleteLocation: (id: LocationId) => void;
+    onDeleteLocation: (e: React.MouseEvent, id: LocationId) => void;
     onSelectLocation: (id: LocationId) => void;
-    onUpdateLocation: (coord: Coordinates) => void;
+    onUpdateLocation: (e: React.MouseEvent, coord: Coordinates) => void;
 }
 
 const LocationListItem: FC<LocationListItemProps> = ({
@@ -42,28 +50,26 @@ const LocationListItem: FC<LocationListItemProps> = ({
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-between"
+                    justifyContent: "space-between",
+                    cursor: "pointer",
+                    ":hover": {
+                        boxShadow: 18
+                    }
                 }}
                 variant="outlined"
+                onClick={() => onSelectLocation(id)}
             >
                 <CardHeader
                     action={
-                        <>
+                        <Tooltip title="Update">
                             <IconButton
                                 type="button"
-                                aria-label="delete"
-                                onClick={() => onUpdateLocation(coord)}
+                                aria-label="update"
+                                onClick={(e) => onUpdateLocation(e, coord)}
                             >
                                 <CachedIcon />
                             </IconButton>
-                            <IconButton
-                                type="button"
-                                aria-label="delete"
-                                onClick={() => onSelectLocation(id)}
-                            >
-                                <InfoIcon />
-                            </IconButton>
-                        </>
+                        </Tooltip>
                     }
                     title={countryName ? `${name}, ${countryName}` : name}
                     subheader={`${convertUnixTimeToDate(dt)}, ${convertUnixTimeToTime(dt)}`}
@@ -94,13 +100,15 @@ const LocationListItem: FC<LocationListItemProps> = ({
                     </Typography>
                 </CardContent>
                 <Box sx={{position: "absolute", right: 0, bottom: 0}} pb={1} pr={1}>
-                    <IconButton
-                        type="button"
-                        aria-label="delete"
-                        onClick={() => onDeleteLocation(id)}
-                    >
-                        <DeleteIcon />
-                    </IconButton>
+                    <Tooltip title="Delete">
+                        <IconButton
+                            type="button"
+                            aria-label="delete"
+                            onClick={(e) => onDeleteLocation(e, id)}
+                        >
+                            <DeleteIcon />
+                        </IconButton>
+                    </Tooltip>
                 </Box>
             </Card>
         </Box>

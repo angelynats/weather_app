@@ -1,6 +1,5 @@
 import React from "react";
 import {HashRouter} from "react-router-dom";
-import {ReactNotifications} from "react-notifications-component";
 
 // redux
 import {createRoot} from "react-dom/client";
@@ -14,7 +13,6 @@ import AppContainer from "./AppContainer";
 import {ModalProvider} from "./utils/contexts";
 
 // styles
-import "./styles/globals.scss";
 import {createTheme, ThemeProvider} from "@mui/material";
 
 const theme = createTheme({
@@ -31,7 +29,6 @@ root.render(
     <React.StrictMode>
         <Provider store={store}>
             <HashRouter>
-                <ReactNotifications />
                 <ThemeProvider theme={theme}>
                     <ModalProvider>
                         <AppContainer />

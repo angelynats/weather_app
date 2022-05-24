@@ -42,7 +42,10 @@ const LocationForecastDateList: FC<LocationForecastDateListProps> = ({
                             justifyContent: "center",
                             alignItems: "center",
                             cursor: "pointer",
-                            backgroundColor: selectedIndex === index ? "#f3f3f3" : ""
+                            backgroundColor: selectedIndex === index ? "#f3f3f3" : "",
+                            ":hover": {
+                                boxShadow: 10
+                            }
                         }}
                         variant="outlined"
                         onClick={() => onSelectDate(index)}

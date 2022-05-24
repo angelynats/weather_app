@@ -1,5 +1,5 @@
 import React from "react";
-import {act} from "@testing-library/react";
+import {act, waitFor} from "@testing-library/react";
 
 // components
 import App from "../App";
@@ -16,28 +16,24 @@ describe("Test App Router", () => {
         await act(async () => {
             componentRenderByMemoryRouter("/", <App />);
         });
-        toBeExpectByTestId("app-component-test-id");
+        await waitFor(() => {
+            toBeExpectByTestId("app-component-test-id");
+        });
     });
 
     test('should render HomePage component with path "/"', async () => {
         await act(async () => {
             componentRenderByMemoryRouter("/", <App />);
         });
+
         toBeExpectByText("Weather App");
     });
 
     test('should render LocationPage component with path "/location/:id"', async () => {
-        await act(async () => {
-            componentRenderByMemoryRouter("/location/3081368", <App />);
+        componentRenderByMemoryRouter("/location/3081368", <App />);
+        await waitFor(() => {
+            toBeExpectByText("Location Details");
         });
-        toBeExpectByText("Location Details");
-    });
-
-    test('should render LocationPage component with path "/location/:id" - wrong path', async () => {
-        await act(async () => {
-            componentRenderByMemoryRouter("/location/3001368151665888", <App />);
-        });
-        toBeExpectByText("No result");
     });
 
     test("should render Error404 page", async () => {

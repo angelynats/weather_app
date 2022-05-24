@@ -24,11 +24,13 @@ const LocationList: FC = () => {
         navigate(`/location/${id}`);
     };
 
-    const handleDeleteLocation = (id: LocationId) => {
+    const handleDeleteLocation = (e: React.MouseEvent, id: LocationId) => {
+        e.stopPropagation();
         dispatch(deleteLocation(id));
     };
 
-    const handleUpdateLocation = (coord: Coordinates) => {
+    const handleUpdateLocation = (e: React.MouseEvent, coord: Coordinates) => {
+        e.stopPropagation();
         dispatch(fetchCurrentWeather(coord));
     };
 

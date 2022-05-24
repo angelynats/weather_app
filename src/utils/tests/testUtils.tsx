@@ -26,9 +26,9 @@ export const componentRenderByMemoryRouter = (
 };
 
 export const toBeExpectByTestId = (testId: string) => {
-    return expect(screen.getByTestId(`${testId}`)).toBeInTheDocument();
+    return expect(screen.getByTestId(testId)).toBeInTheDocument();
 };
 
 export const toBeExpectByText = (text: string) => {
-    return expect(screen.getByText(`${text}`)).toBeInTheDocument();
+    return expect(screen.getByText(text)).toBeInTheDocument();
 };

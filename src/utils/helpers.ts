@@ -79,6 +79,7 @@ export const fetchCityNames = async (query: string) => {
             title: "Oops!",
             message: error.response.data ? error.response.data.message : error.message
         });
+        return [];
     }
 };
 
@@ -91,6 +92,7 @@ export const fetchCityNamesByCoordinates = async (options: Coordinates) => {
             title: "Oops!",
             message: error.response.data ? error.response.data.message : error.message
         });
+        return [];
     }
 };
 

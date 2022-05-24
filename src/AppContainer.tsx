@@ -1,4 +1,5 @@
 import React, {FC, useContext, useEffect} from "react";
+import {ReactNotifications} from "react-notifications-component";
 
 // components
 import App from "./App";
@@ -17,6 +18,9 @@ import {ModalContext} from "./utils/contexts";
 // redux
 import {fetchCurrentWeatherMultiple} from "./redux/actions/fetchCurrentWeatherMultiple";
 import {fetchCurrentWeather} from "./redux/actions/fetchCurrentWeather";
+
+// styles
+import "./styles/globals.scss";
 
 const AppContainer: FC = () => {
     const dispatch = useAppDispatch();
@@ -46,6 +50,7 @@ const AppContainer: FC = () => {
 
     return (
         <>
+            <ReactNotifications />
             <App />
         </>
     );
