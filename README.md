@@ -11,7 +11,7 @@ Configured with:
 - ESLint
 - Prettier
 
-# Installation
+## Installation
 
 git clone https://github.com/angelynats/weather-app.git
 
