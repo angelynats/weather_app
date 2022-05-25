@@ -9,15 +9,27 @@ import dotenv from "dotenv";
 const globalCSS = resolve(__dirname, "./", "src/styles/globals");
 
 const webpackConfig = (env): Configuration => ({
-    entry: "./src/index.tsx",
+    entry: {
+        index: "./src/index.tsx"
+    },
     ...(env.production || !env.development ? {} : {devtool: "eval-source-map"}),
+    output: {
+        path: path.join(__dirname, "/dist"),
+        filename: "[name].bundle.js"
+    },
+    performance: {hints: false},
+    optimization: {
+        splitChunks: {
+            chunks: "all",
+            minSize: 0,
+            cacheGroups: {
+                commons: {test: /[\\/]node_modules[\\/]/, name: "common", chunks: "all"}
+            }
+        }
+    },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json", ".css", ".scss"],
         plugins: [new TsconfigPathsPlugin()]
-    },
-    output: {
-        path: path.join(__dirname, "/dist"),
-        filename: "build.js"
     },
     module: {
         rules: [

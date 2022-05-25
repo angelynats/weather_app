@@ -3,7 +3,6 @@
   "description": "Weather application",
   "version": "1.0.0",
   "private": true,
-  "main": "src/index.tsx",
   "homepage": "https://angelynats.github.io/weather_app",
   "repository": "",
   "license": "",

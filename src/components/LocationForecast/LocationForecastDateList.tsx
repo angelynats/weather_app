@@ -43,6 +43,7 @@ const LocationForecastDateList: FC<LocationForecastDateListProps> = ({
                             alignItems: "center",
                             cursor: "pointer",
                             backgroundColor: selectedIndex === index ? "#f3f3f3" : "",
+                            boxShadow: selectedIndex === index ? 10 : 0,
                             ":hover": {
                                 boxShadow: 10
                             }
